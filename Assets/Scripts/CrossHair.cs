@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CrossHair : MonoBehaviour
@@ -8,6 +6,7 @@ public class CrossHair : MonoBehaviour
     {
       Cursor.visible = false;
     }
+
     private void FixedUpdate()
     {
         Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

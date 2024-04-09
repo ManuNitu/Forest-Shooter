@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Melee : MonoBehaviour
 {
     public float damage;
-    private Transform player;
+
     private bool facingRight = true;
+    private Transform player;
+    
+
     private void Awake()
     {
         damage += SpawnEnemies.increaseDamage;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+
     private void Update()
     {
         if (player.position.x > transform.position.x && !facingRight)
@@ -19,6 +21,7 @@ public class Enemy_Melee : MonoBehaviour
         else if (player.position.x < transform.position.x && facingRight)
             Flip();
     }
+
     void Flip()
     {
         facingRight = !facingRight;
@@ -27,6 +30,7 @@ public class Enemy_Melee : MonoBehaviour
         else
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -26,6 +24,7 @@ public class AudioManager : MonoBehaviour
         else
             Destroy(this.gameObject);
     }
+
     public void PlaySfx(AudioSource sfx)
     {
         float randPitch = Random.Range(0.8f, 1f);
